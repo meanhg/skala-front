@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+/* 전체 테마 및 텍스트 Styling (미션 1) */
+body {
+    background-color: #f1f5f9;
+    font-family: 'Jua', sans-serif;
+    line-height: 1.6;
+    color: #334155;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* 박스 모델의 이해 (미션 2 - container) */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* 제목 강조 */
+h1,
+h2,
+h3 {
+    color: #1d4ed8;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* 링크 스타일 */
+a {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 여행지 리뷰 카드 (미션 2 - trip-card) */
+.trip-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.trip-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* 깔끔한 테이블 디자인 (미션 2 - myClass table) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-weight: bold;
+}
+
+td[rowspan] {
+    background-color: #fafafa;
+}
+
+/* 가독성 높은 회원가입 폼 (미션 3) */
+fieldset {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    background-color: #ffffff;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 16px;
+    color: #1d4ed8;
+    padding: 0 10px;
+}
+
+/* 입력창 키우고 이쁘게 다듬기 */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #1d4ed8;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+}
+
+/* 라디오 & 체크박스 */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 6px;
+    accent-color: #1d4ed8;
+}
+
+/* 카드 인라인으로 상속시키기 */
+.inline-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.inline-group input,
+.inline-group select {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* 버튼 꾸미기 */
+.btn-submit {
+    background-color: #0d9488;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: inherit;
+    margin-right: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #0f766e;
+}
+
+.btn-reset {
+    background-color: #94a3b8;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: inherit;
+}
+
+.btn-reset:hover {
+    background-color: #64748b;
+}
+
+.backBtn {
+    color: #1d4ed8;
+}
