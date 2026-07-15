@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+</head>
+
+<body>
+    <h2>👤 회원가입</h2>
+    <div>SKALA-FRONT 회원가입을 환영합니다.</div>
+    <hr>
+
+    <form action="signUpResult.html" method="get">
+
+        <fieldset>
+            <legend>계정 정보</legend>
+            <p>
+                <label for="username">아이디:</label>
+                <input type="text" id="username" name="username" placeholder="4~15자 영문/숫자" required>
+                <span>(필수)</span>
+            </p>
+            <p>
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password" placeholder="8자 이상 입력" required>
+                <span>(필수)</span>
+            </p>
+            <p>
+                <label for="email_id">이메일:</label>
+                <input type="text" id="email_id" name="email_id" placeholder="example">
+                <span>@</span>
+                <select name="email_domain">
+                    <option value="">직접 입력</option>
+                    <option value="naver.com">naver.com</option>
+                    <option value="gmail.com">gmail.com</option>
+                    <option value="daum.net">daum.net</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <!-- 개인 프로필 정보 -->
+        <fieldset>
+            <legend>개인 프로필 정보</legend>
+            <p>
+                <label for="fullname">이름:</label>
+                <input type="text" id="fullname" name="fullname">
+            </p>
+            <p>
+                <label for="birthdate">생년월일:</label>
+                <input type="date" id="birthdate" name="birthdate">
+            </p>
+            <p>
+                <label>성별:</label>
+                <input type="radio" name="gender" value="male" id="gender_male" checked>
+                <label for="gender_male">남성</label>
+                <input type="radio" name="gender" value="female" id="gender_female">
+                <label for="gender_female">여성</label>
+                <input type="radio" name="gender" value="none" id="gender_none">
+                <label for="gender_none">선택안함</label>
+            </p>
+
+            <p>관심 분야 (중복 선택 가능):</p>
+            <p>
+                <input type="checkbox" name="interest" value="frontend" id="interest_frontend">
+                <label for="interest_frontend">웹 프론트엔드 (Vue.js/HTML)</label><br>
+                <input type="checkbox" name="interest" value="uiux" id="interest_uiux">
+                <label for="interest_uiux">UI/UX 디자인 표준</label><br>
+                <input type="checkbox" name="interest" value="backend" id="interest_backend">
+                <label for="interest_backend">백엔드 & 데이터베이스</label><br>
+                <input type="checkbox" name="interest" value="infra" id="interest_infra">
+                <label for="interest_infra">클라우드 & 인프라</label>
+            </p>
+
+            <p>
+                <label for="join_path">가입 경로:</label>
+                <select id="join_path" name="join_path">
+                    <option value="">- 선택해 주세요 -</option>
+                    <option value="search">인터넷 검색</option>
+                    <option value="friend">지인 추천</option>
+                    <option value="sns">SNS 광고</option>
+                    <option value="other">기타</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>자기소개</legend>
+            <p><label for="introduction">나를 표현하는 한 줄 소개 또는 가입 인사:</label></p>
+            <p><textarea id="introduction" name="introduction" placeholder="여기에 내용을 입력하세요 (최대 200자)" maxlength="200"
+                    rows="5" cols="50"></textarea></p>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="동의하고 회원가입">
+            <input type="reset" value="다시 작성">
+        </p>
+    </form>
+</body>
+
+</html>
