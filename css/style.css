@@ -13,12 +13,12 @@ body {
 /* 박스 모델의 이해 (미션 2 - container) */
 .container {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 30px;
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    margin: 0 auto;
+    padding: 30px;
 }
 
 /* 제목 강조 */
@@ -43,7 +43,70 @@ a:hover {
     text-decoration: underline;
 }
 
-/* 여행지 리뷰 카드 (미션 2 - trip-card) */
+/* Index 페이지 Flexbox 레이아웃 */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+/* 바로가기 메뉴: 마우스를 올릴 때 색상이 부드럽게 변함 */
+nav a {
+    display: block;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #eff6ff;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 바로가기 메뉴에 마우스를 올렸을 때의 색상 */
+nav a:hover {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav a.active {
+    background-color: #1d4ed8;
+    color: #ffffff;
+}
+
+/* 메뉴를 클릭하면 이 영역에서 페이지 내용이 바뀜 */
+#page-content {
+    min-height: 400px;
+}
+
+#page-content .backBtn {
+    display: none;
+}
+
+.content-layout {
+    display: flex;
+    gap: 25px;
+}
+
+main {
+    flex: 2;
+}
+
+aside {
+    flex: 1;
+    padding: 0 20px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+}
+
+/* 여행지 카드 Grid 레이아웃 */
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* 여행지 카드: 움직임과 그림자 변화가 부드럽게 적용됨 */
 .trip-card {
     background-color: #f8fafc;
     border: 1px solid #e2e8f0;
@@ -52,6 +115,17 @@ a:hover {
     margin-bottom: 20px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* 여행지 카드: 마우스를 올리면 위로 떠오르고 그림자가 진해짐 */
+.trip-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.trip-grid .trip-card {
+    margin: 0;
 }
 
 .trip-card img {
@@ -151,7 +225,7 @@ input[type="checkbox"] {
     margin-top: 0;
 }
 
-/* 버튼 꾸미기 */
+/* 회원가입 버튼: 마우스를 올릴 때 부드럽게 색상과 위치가 변함 */
 .btn-submit {
     background-color: #0d9488;
     color: #ffffff;
@@ -161,13 +235,15 @@ input[type="checkbox"] {
     font-weight: bold;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s, transform 0.3s;
     font-family: inherit;
     margin-right: 10px;
 }
 
+/* 회원가입 버튼에 마우스를 올렸을 때의 효과 */
 .btn-submit:hover {
     background-color: #0f766e;
+    transform: translateY(-2px);
 }
 
 .btn-reset {
@@ -189,4 +265,33 @@ input[type="checkbox"] {
 
 .backBtn {
     color: #1d4ed8;
+}
+
+/* Index 페이지 타이틀: 페이지를 열면 부드럽게 나타남 */
+.main-title {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 페이드인 애니메이션의 시작과 끝 위치 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 반응형 커스텀 */
+@media (max-width: 600px) {
+    .content-layout {
+        flex-direction: column;
+    }
+
+    .trip-grid {
+        grid-template-columns: 1fr;
+    }
 }
